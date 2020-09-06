@@ -370,12 +370,32 @@ body {
   text-align: center;
   margin-bottom: 50px;
 }
-.whatwedo.item {
+.whatwedo .item {
   /* отведенная ширина под фото из раздела */
   flex-basis: calc ((100% - 2 * 30px) / 3);
+  position: relative; /*можно ли применять к ли?*/
 }
 .whatwedo .item:not(:last-child) {
   margin-right: 30px;
+}
+
+/* --------------------------------------- */
+
+.uppertext {
+  /* стили для полупрозрачного блока с текстом поверх фото */
+  position: absolute;
+  /* display: block; */
+  bottom: 0;
+  right: 0;
+  background: rgba(47, 48, 58, 0.8);
+  height: 70px;
+  width: 100%;
+  color: var(--title-color);
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 27px 82px;
 }
 
 /* ======================================================== */
@@ -804,3 +824,27 @@ body {
 /* **************************************************************** */
 /* **************************************************************** */
 /* **************************************************************** */
+
+.overlay-container {
+  /* это для контейнера, который содержит фото для которого применяется оверлей с текстом */
+  position: relative;
+  overflow: hidden;
+}
+.projects .text.overlay {
+  /* стили для оверлея */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(33, 150, 243, 0.9);
+  color: var(--title-color);
+  font-size: 18px;
+  line-height: 1.56;
+  padding: 63px 24px;
+  transform: translatey(100%);
+}
+.page-portfolio .projects .item:hover .overlay {
+  transition: transform 250ms ease;
+  transform: translatey(0);
+}
