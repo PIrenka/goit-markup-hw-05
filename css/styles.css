@@ -4,9 +4,11 @@
 Цвета для логотипа: #2196F3 и #000000
 Цвет Заголовка и в футере: #ffffff
 Цвет текста имейла и тел в футере: rgba(255, 255, 255, 0.6)
+
 Цвет фона: #ffffff
 Цвет фона для Заголовка и Футера: #2F303A
 Цвет фона для Наша Команда: #F5F4FA
+
 Размер шрифта:
 Основной шрифт: Roboto normal and bold
 Шрифт Логотипа: Raleway bold */
@@ -89,15 +91,15 @@ body {
   outline-color: var(--active-color);
 }
 
-/* ======================================================== */
-/* ======================HEADER============================ */
-/* ======================================================== */
-
 .flexbox {
   /* для того чтоб списки смогли стать в ряд */
   display: flex;
   flex-wrap: wrap;
 }
+
+/* ======================================================== */
+/* ======================HEADER============================ */
+/* ======================================================== */
 
 .logo {
   /*общие стили для логотипа в целом */
@@ -138,12 +140,13 @@ body {
   /* жирность текста в навигации хедера */
   font-weight: 500;
   margin-right: auto;
+  /* position: relative; */
 }
-/* .header-nav .item { */
-/* сделать область наведения больше */
-/* padding-top: 15px;
-  padding-bottom: 15px;
-  } */
+.site-nav .link {
+  /* сделать область наведения больше */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
 .site-nav .item:not(:last-child) {
   /* отступ справа кроме последнего ли в сайт-нав */
@@ -156,6 +159,17 @@ body {
 .site-nav .link.current {
   /* выделение ссылки в навигации хедера текуущей страници другим цветом */
   color: var(--active-color);
+}
+
+.link.current::after {
+  /* "подчеркивание" активной страницы в Хедере */
+  position: relative;
+  content: "";
+  display: flex;
+  background: var(--active-color);
+  height: 4px;
+  border-radius: 2px;
+  top: 31px;
 }
 
 .mail-tel-nav {
@@ -211,8 +225,8 @@ body {
   /* padding: 200px 252px; */
   background-size: contain;
   background-image: linear-gradient(
-      rgba(47, 48, 58, 0.4),
-      rgba(47, 48, 58, 0.4)
+      var(--hero-overlay-color),
+      var(--hero-overlay-color)
     ),
     url("../images/hero-bg.jpg");
   background-repeat: no-repeat;
@@ -500,6 +514,9 @@ body {
   border-radius: 4px;
   width: calc((100% - 30px * 5) / 6);
   height: 90px;
+
+  justify-content: center;
+  align-items: center;
 }
 .our-clients .item:not(:last-child) {
   /* отступы между блоками логотипов компаний */
@@ -520,51 +537,45 @@ body {
   /* размеры и расположение логотипа компании-1 */
   width: 44.27px;
   height: 49.23px;
-  margin: 20px 63px;
 }
 .icon.client-2 {
   /* размеры и расположение логотипа компании-2 */
   width: 40px;
   height: 52px;
-  margin: 19px 65px;
 }
 .icon.client-3 {
   /* размеры и расположение логотипа компании-3 */
   width: 41px;
   height: 42.6px;
-  margin: 24px 64px;
 }
 .icon.client-4 {
   /* размеры и расположение логотипа компании-4 */
   width: 79.66px;
   height: 42.02px;
-  margin: 24px 45px;
 }
 .icon.client-5 {
   /* размеры и расположение логотипа компании-5 */
   width: 59px;
   height: 47px;
-  margin: 22px 56px;
 }
 .icon.client-6 {
   /* размеры и расположение логотипа компании-6 */
   width: 88.48px;
   height: 45.44px;
-  margin: 22px 41px;
 }
 
-.link:hover .client-1,
-.link:hover .client-2,
-.link:hover .client-3,
-.link:hover .client-4,
-.link:hover .client-5,
-.link:hover .client-6,
-.link:focus .client-1,
-.link:focus .client-2,
-.link:focus .client-3,
-.link:focus .client-4,
-.link:focus .client-5,
-.link:focus .client-6 {
+.item:hover .client-1,
+.item:hover .client-2,
+.item:hover .client-3,
+.item:hover .client-4,
+.item:hover .client-5,
+.item:hover .client-6,
+.item:focus .client-1,
+.item:focus .client-2,
+.item:focus .client-3,
+.item:focus .client-4,
+.item:focus .client-5,
+.item:focus .client-6 {
   /* заливка иконок логотипов компаний при ховере */
   fill: var(--active-color);
   cursor: pointer;
@@ -587,12 +598,25 @@ body {
   line-height: 1.71;
 }
 
+.container.footer {
+  align-items: baseline;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.footer .list:not(:last-child) {
+  margin-right: 85px;
+}
+
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
 .footer-contacts {
   /* отступы для первого столбика контактов в футере */
   padding-top: 60px;
   padding-bottom: 60px;
   margin-right: 82px;
 }
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
 
 .page-footer .logo {
   /* отступы для Лого в футере */
@@ -616,11 +640,15 @@ body {
   margin-top: 9px;
 }
 
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
 .footer-social-contacts {
   /* отступы для второго столбика контактов в футере */
   padding-top: 72px;
   padding-bottom: 100px;
 }
+/* ----------------------------------------------------- */
+/* ----------------------------------------------------- */
 .join-to-us .text {
   /* стили для текста-контейнера */
   color: var(--title-color);
