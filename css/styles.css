@@ -58,8 +58,7 @@ body {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px auto;
   /* outline: 3px solid red; */
 }
 
@@ -101,6 +100,20 @@ body {
 /* ======================HEADER============================ */
 /* ======================================================== */
 
+.page-header {
+  /* общие стили для всего Хедера */
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  background-color: var(--title-color);
+  /* нижняя линия внизу хедера */
+  border-bottom: 1px solid var(--header-bottom-line);
+}
+.page-header .flexbox {
+  /* выравнивание по центру содержимого хедера */
+  align-items: center;
+}
+
 .logo {
   /*общие стили для логотипа в целом */
   font-family: Raleway, sans-serif;
@@ -125,15 +138,6 @@ body {
 .studio-logotext {
   /* стили для части Studio в логотипе */
   color: var(--logo-studio-color);
-}
-
-.page-header {
-  /* нижняя линия внизу хедера */
-  border-bottom: 1px solid var(--header-bottom-line);
-}
-.page-header .flexbox {
-  /* выравнивание по центру содержимого хедера */
-  align-items: center;
 }
 
 .header-nav {
@@ -212,6 +216,7 @@ body {
 
 .hero {
   /*  стили для секции Hero, особенно для фона Героя если не подгрузился файл CSS*/
+  padding-top: 81px;
   background: var(--hero-background-color);
   /* outline: 5px solid orange; */
 }
@@ -278,6 +283,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 .backdrop.is-hidden {
   /* стили "скрытия" слоя с модальным окном */
