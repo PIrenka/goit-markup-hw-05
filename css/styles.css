@@ -161,15 +161,19 @@ body {
   color: var(--active-color);
 }
 
+.site-nav .link {
+  position: relative;
+}
 .link.current::after {
   /* "подчеркивание" активной страницы в Хедере */
-  position: relative;
+  position: absolute;
   content: "";
   display: flex;
-  background: var(--active-color);
+  background-color: var(--active-color);
   height: 4px;
+  width: 100%;
   border-radius: 2px;
-  top: 31px;
+  margin-top: 29px;
 }
 
 .mail-tel-nav {
