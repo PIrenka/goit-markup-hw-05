@@ -298,11 +298,11 @@ body {
   opacity: 0; /* слой стал прозрачным, но не пускающим за себя */
   pointer-events: none; /* появилась возможность проникнуть сквозь слой и выбирать и нажимать на элементы страницы */
   /* visibility: hidden; */
-  /* transition: transform 1000ms cubic-bezier(0.4, 0, 0.2, 1); */
+  /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .backdrop.is-hidden .modal {
-  transform: scale(0.8);
+  transform: translate(-50%, -50%) scale(0.5); /* тут если убрать translate(-50%, -50%) получится тоже интересный эффект - с правого нижнего угла модалка поднимается и расширяется на центр */
 }
 
 .modal {
@@ -322,9 +322,8 @@ body {
   border-radius: 4px;
 
   /* opacity: 1; */
-
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  /* opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1);*/
+  /* opacity 1000ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .button-modal {
   /* стили для кнопки (крестик в кружочке) закрытия модального окна */
@@ -343,39 +342,7 @@ body {
   width: 18px;
   height: 18px;
   fill: var(--logo-studio-color);
-  /* display: block; */
 }
-
-/* .hero .button:active .backdrop.is-hidden {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
-} */
-
-/* --------------------------------------------- */
-
-/* --------------------------------------------- */
-
-/* --------------------------------------------- */
-/* .modal:hover {
-  transform: scale(1.7);
-  animation-name: changeScale;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-@keyframes changeScale {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(180deg) scale(0.5);
-  }
-  100% {
-    transform: rotate(360deg) scale(0);
-  }
-} */
-/* --------------------------------------------- */
 
 /* ======================================================== */
 /* ======================FEATURES========================== */
